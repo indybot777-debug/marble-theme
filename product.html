@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリーチャー ティー - MARBLE</title>
+  <link rel="stylesheet" href="assets/marble-base.css">
+  <link rel="stylesheet" href="assets/product-page.css">
+</head>
+<body>
+
+  <!-- Desktop: Centered Logo (inverts on scroll) -->
+  <div class="header-logo">
+    <a href="/" class="header-logo__link">MARBLE</a>
+  </div>
+  
+  <!-- Desktop: Floating Left Nav -->
+  <nav class="header-nav-float">
+    <a href="/collections/all" class="header-nav-float__link">shop</a>
+    <a href="/pages/archive" class="header-nav-float__link">archive</a>
+    <a href="/pages/world" class="header-nav-float__link">world</a>
+    <a href="/pages/info" class="header-nav-float__link">info</a>
+  </nav>
+  
+  <!-- Desktop: Cart -->
+  <a href="/cart" class="header-cart">cart (0)</a>
+  
+  <!-- Mobile: Bottom Nav -->
+  <header class="header">
+    <nav class="header__nav">
+      <a href="/collections/all" class="header__nav-link">shop</a>
+      <a href="/pages/archive" class="header__nav-link">archive</a>
+      <a href="/pages/world" class="header__nav-link">world</a>
+      <a href="/pages/info" class="header__nav-link">info</a>
+    </nav>
+    <a href="/cart" class="header__cart">cart (0)</a>
+  </header>
+
+  <!-- Product Page -->
+  <main class="product">
+    <!-- Left Column: Info -->
+    <div class="product__info">
+      <p class="product__price">$48.00</p>
+      
+      <h1 class="product__title" data-english="Creature Tee - Black" data-katakana="クリーチャー ティー ー ブラック">
+        クリーチャー ティー ー ブラック
+      </h1>
+      
+      <div class="product__details">
+        <button class="product__details-toggle" aria-expanded="true">
+          Details <span class="toggle-icon">−</span>
+        </button>
+        <div class="product__details-content">
+          <p>Heavyweight cotton tee featuring the Creature graphic. Relaxed fit with dropped shoulders. Screen printed artwork.</p>
+          <p class="product__meta">
+            <span>100% Cotton</span><br>
+            <span>Made in Japan</span><br>
+            <span>Color: Black</span>
+          </p>
+        </div>
+      </div>
+      
+      <div class="product__size-guide">
+        <button class="product__details-toggle">
+          Size Guide <span class="toggle-icon">+</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Center Column: Images (main focus) -->
+    <div class="product__media">
+      <div class="product__images">
+        <img src="https://picsum.photos/seed/product1/800/1000" alt="Creature Tee - Front" class="product__image" id="img-1">
+        <img src="https://picsum.photos/seed/product2/800/1000" alt="Creature Tee - Back" class="product__image" id="img-2">
+        <img src="https://picsum.photos/seed/product3/800/800" alt="Creature Tee - Detail" class="product__image" id="img-3">
+        <img src="https://picsum.photos/seed/product4/800/1000" alt="Creature Tee - Model" class="product__image" id="img-4">
+      </div>
+    </div>
+  
+  <!-- Floating Image Thumbnails -->
+  <div class="product__thumbnails">
+    <div class="product__thumbnail active" data-target="img-1">
+      <img src="https://picsum.photos/seed/product1/100/100" alt="">
+    </div>
+    <div class="product__thumbnail" data-target="img-2">
+      <img src="https://picsum.photos/seed/product2/100/100" alt="">
+    </div>
+    <div class="product__thumbnail" data-target="img-3">
+      <img src="https://picsum.photos/seed/product3/100/100" alt="">
+    </div>
+    <div class="product__thumbnail" data-target="img-4">
+      <img src="https://picsum.photos/seed/product4/100/100" alt="">
+    </div>
+  </div>
+    
+    <!-- Right Column: Size + Add to Cart -->
+    <div class="product__actions">
+      <div class="product__size-select">
+        <span class="product__size-label">Size</span>
+        <div class="product__sizes">
+          <button class="product__size" disabled>XS</button>
+          <button class="product__size">S</button>
+          <button class="product__size selected">M</button>
+          <button class="product__size">L</button>
+          <button class="product__size">XL</button>
+        </div>
+      </div>
+      
+      <button class="product__add-btn">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- Recommended Products -->
+  <section class="recommended">
+    <h2 class="recommended__title">Related</h2>
+    <div class="recommended__grid">
+      <article class="product-card">
+        <a href="/products/sample" class="product-card__link">
+          <img src="https://picsum.photos/seed/rec1/400/400" class="product-card__image" alt="">
+          <div class="product-card__info">
+            <h3 class="product-card__title">Creature Tee - Olive</h3>
+            <p class="product-card__price">$48.00</p>
+          </div>
+        </a>
+      </article>
+      <article class="product-card">
+        <a href="/products/sample" class="product-card__link">
+          <img src="https://picsum.photos/seed/rec2/400/400" class="product-card__image" alt="">
+          <div class="product-card__info">
+            <h3 class="product-card__title">Monster Tee - Black</h3>
+            <p class="product-card__price">$48.00</p>
+          </div>
+        </a>
+      </article>
+      <article class="product-card">
+        <a href="/products/sample" class="product-card__link">
+          <img src="https://picsum.photos/seed/rec3/400/400" class="product-card__image" alt="">
+          <div class="product-card__info">
+            <h3 class="product-card__title">Cat Logo Hoodie</h3>
+            <p class="product-card__price">$95.00</p>
+          </div>
+        </a>
+      </article>
+      <article class="product-card">
+        <a href="/products/sample" class="product-card__link">
+          <img src="https://picsum.photos/seed/rec4/400/400" class="product-card__image" alt="">
+          <div class="product-card__info">
+            <h3 class="product-card__title">Sticker Pack</h3>
+            <p class="product-card__price">$8.00</p>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="newsletter">
+      <input type="email" class="newsletter__input" placeholder="email for updates">
+    </div>
+    
+    <nav class="footer__links">
+      <a href="/pages/shipping" class="footer__link">shipping</a>
+      <a href="/pages/returns" class="footer__link">returns</a>
+      <a href="/pages/contact" class="footer__link">contact</a>
+      <a href="https://instagram.com/marblesoda" class="footer__link">instagram</a>
+    </nav>
+    
+    <p class="footer__copy">© 2026 marble</p>
+  </footer>
+
+  <!-- 3D Cursor-Tracking Eyes -->
+  <div class="eyes-container" id="eyesContainer">
+    <div class="eyes">
+      <div class="eye" style="--blink-delay: 0s;">
+        <div class="eye__pupil" id="pupilLeft"></div>
+      </div>
+      <div class="eye" style="--blink-delay: 0.1s;">
+        <div class="eye__pupil" id="pupilRight"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">added to cart</div>
+
+  <script>
+    // Katakana word map
+    const wordMap = {
+      'shop': 'ショップ', 'archive': 'アーカイブ', 'world': 'ワールド', 'info': 'インフォ',
+      'creature': 'クリーチャー', 'cat': 'キャット', 'logo': 'ロゴ', 'hoodie': 'フーディー',
+      'tee': 'ティー', 'monster': 'モンスター', 'sticker': 'ステッカー', 'pack': 'パック',
+      'black': 'ブラック', 'olive': 'オリーブ', 'pink': 'ピンク', 'charcoal': 'チャコール',
+      'shipping': '配送', 'returns': '返品', 'contact': 'お問い合わせ', 'instagram': 'インスタグラム',
+      'related': '関連商品', 'details': '詳細', 'size': 'サイズ', 'add to cart': 'カートに追加'
+    };
+    
+    const glitchChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンー';
+    
+    function toKatakana(text) {
+      let result = text.toLowerCase();
+      const sortedWords = Object.keys(wordMap).sort((a, b) => b.length - a.length);
+      for (const word of sortedWords) {
+        const regex = new RegExp(word, 'gi');
+        result = result.replace(regex, wordMap[word]);
+      }
+      result = result.replace(/ - /g, ' ー ');
+      return result;
+    }
+    
+    function scrambleText(element, originalText, targetText, duration = 600) {
+      const length = Math.max(originalText.length, targetText.length);
+      const steps = 8;
+      const stepTime = duration / steps;
+      let currentStep = 0;
+      
+      const interval = setInterval(() => {
+        currentStep++;
+        let result = '';
+        for (let i = 0; i < length; i++) {
+          const progress = currentStep / steps;
+          const charResolved = i < targetText.length * progress;
+          if (charResolved) {
+            result += targetText[i] || '';
+          } else if (i < originalText.length) {
+            result += glitchChars[Math.floor(Math.random() * glitchChars.length)];
+          }
+        }
+        element.textContent = result;
+        if (currentStep >= steps) {
+          clearInterval(interval);
+          element.textContent = targetText;
+        }
+      }, stepTime);
+      return interval;
+    }
+    
+    // Apply glitch to links
+    function applyGlitchToLinks(selector) {
+      document.querySelectorAll(selector).forEach(link => {
+        const englishText = link.textContent;
+        const katakanaText = toKatakana(englishText);
+        let currentInterval = null;
+        
+        link.addEventListener('mouseenter', () => {
+          if (currentInterval) clearInterval(currentInterval);
+          currentInterval = scrambleText(link, link.textContent, katakanaText, 400);
+        });
+        link.addEventListener('mouseleave', () => {
+          if (currentInterval) clearInterval(currentInterval);
+          currentInterval = scrambleText(link, link.textContent, englishText, 400);
+        });
+      });
+    }
+    
+    applyGlitchToLinks('.header-nav-float__link');
+    applyGlitchToLinks('.footer__link');
+    
+    // Product title hover (show English)
+    const productTitle = document.querySelector('.product__title');
+    if (productTitle) {
+      const englishText = productTitle.dataset.english;
+      const katakanaText = productTitle.dataset.katakana;
+      let currentInterval = null;
+      
+      productTitle.addEventListener('mouseenter', () => {
+        if (currentInterval) clearInterval(currentInterval);
+        currentInterval = scrambleText(productTitle, productTitle.textContent, englishText, 500);
+      });
+      productTitle.addEventListener('mouseleave', () => {
+        if (currentInterval) clearInterval(currentInterval);
+        currentInterval = scrambleText(productTitle, productTitle.textContent, katakanaText, 500);
+      });
+    }
+    
+    // Recommended products (katakana default)
+    document.querySelectorAll('.recommended .product-card__title').forEach(title => {
+      const englishText = title.textContent;
+      const katakanaText = toKatakana(englishText);
+      let currentInterval = null;
+      title.textContent = katakanaText;
+      
+      title.closest('.product-card').addEventListener('mouseenter', () => {
+        if (currentInterval) clearInterval(currentInterval);
+        currentInterval = scrambleText(title, title.textContent, englishText);
+      });
+      title.closest('.product-card').addEventListener('mouseleave', () => {
+        if (currentInterval) clearInterval(currentInterval);
+        currentInterval = scrambleText(title, title.textContent, katakanaText);
+      });
+    });
+    
+    // Eye tracking
+    document.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 700) return;
+      document.querySelectorAll('.eye').forEach(eye => {
+        const rect = eye.getBoundingClientRect();
+        const eyeCenterX = rect.left + rect.width / 2;
+        const eyeCenterY = rect.top + rect.height / 2;
+        const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
+        const distance = Math.min(Math.hypot(e.clientX - eyeCenterX, e.clientY - eyeCenterY) / 15, 10);
+        const pupil = eye.querySelector('.eye__pupil');
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+        pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+      });
+    });
+    
+    // Size selection
+    document.querySelectorAll('.product__size').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        document.querySelectorAll('.product__size').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+    
+    // Add to cart
+    document.querySelector('.product__add-btn')?.addEventListener('click', () => {
+      const toast = document.getElementById('toast');
+      toast.classList.add('visible');
+      setTimeout(() => toast.classList.remove('visible'), 2000);
+    });
+    
+    // Details toggle
+    document.querySelectorAll('.product__details-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('.toggle-icon');
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        if (content) content.style.display = isExpanded ? 'none' : 'block';
+        if (icon) icon.textContent = isExpanded ? '+' : '−';
+      });
+    });
+    
+    // Floating thumbnail navigation
+    const thumbnails = document.querySelectorAll('.product__thumbnail');
+    const productImages = document.querySelectorAll('.product__image');
+    
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const targetId = thumb.dataset.target;
+        const targetImg = document.getElementById(targetId);
+        if (targetImg) {
+          targetImg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          thumbnails.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+        }
+      });
+    });
+    
+    // Update active thumbnail on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0
+    };
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const imgId = entry.target.id;
+          thumbnails.forEach(thumb => {
+            thumb.classList.toggle('active', thumb.dataset.target === imgId);
+          });
+        }
+      });
+    }, observerOptions);
+    
+    productImages.forEach(img => imageObserver.observe(img));
+  </script>
+
+</body>
+</html>

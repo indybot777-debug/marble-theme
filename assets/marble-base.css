@@ -1,0 +1,1105 @@
+/* ============================================
+   MARBLE THEME - Base Styles
+   Forms Minimal + Yeezy Digital Typography
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* Color Palette - Stark */
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #888888;
+  --color-text-hollow: #aaaaaa;
+  
+  /* Typography - Digital/Industrial */
+  --font-digital: 'Share Tech Mono', 'Consolas', 'Monaco', monospace;
+  --font-body: 'Share Tech Mono', 'Consolas', monospace;
+  
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  
+  /* Grid */
+  --grid-gap: 32px;
+  
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* ============================================
+   Header / Navigation - Desktop
+   ============================================ */
+
+/* Centered sticky logo */
+.header-logo {
+  position: fixed;
+  top: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  mix-blend-mode: difference;
+  pointer-events: auto;
+}
+
+.header-logo__link {
+  display: block;
+  font-family: var(--font-digital);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* Floating left nav bin */
+.header-nav-float {
+  position: fixed;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: var(--space-md);
+}
+
+.header-nav-float__link {
+  font-family: var(--font-digital);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+  transition: color var(--transition-fast);
+}
+
+.header-nav-float__link:hover {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+/* Cart - top right */
+.header-cart {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 1000;
+  font-family: var(--font-digital);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  transition: all var(--transition-fast);
+}
+
+.header-cart:hover {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+/* Hide old header on desktop */
+.header {
+  display: none;
+}
+
+/* ============================================
+   Mobile: Bottom nav bar
+   ============================================ */
+
+@media (max-width: 700px) {
+  /* Hide desktop elements */
+  .header-logo {
+    position: fixed;
+    top: var(--space-md);
+    mix-blend-mode: difference;
+  }
+  
+  .header-logo__link {
+    font-size: 14px;
+  }
+  
+  .header-nav-float {
+    display: none;
+  }
+  
+  .header-cart {
+    display: none;
+  }
+  
+  /* Show mobile bottom nav */
+  .header {
+    display: flex;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--space-lg);
+  }
+  
+  .header__logo {
+    display: none;
+  }
+  
+  .header__nav {
+    display: flex;
+    gap: var(--space-xl);
+  }
+  
+  .header__nav-link {
+    font-family: var(--font-digital);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .header__nav-link:hover {
+    color: var(--color-text);
+    opacity: 1;
+  }
+  
+  .header__cart {
+    position: absolute;
+    right: var(--space-lg);
+    font-family: var(--font-digital);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+}
+
+.header__logo {
+  font-family: var(--font-digital);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header__nav {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.header__nav-link {
+  font-family: var(--font-digital);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.header__nav-link:hover {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+.header__cart {
+  font-family: var(--font-digital);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   Product Grid - Borderless
+   ============================================ */
+
+/* ============================================
+   Hero Sections
+   ============================================ */
+
+.hero-dark {
+  background: #0a0a0a;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--space-lg);
+}
+
+.hero-dark__text {
+  font-family: var(--font-digital);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .hero-dark {
+    min-height: 50vh;
+    padding: 80px var(--space-lg);
+  }
+}
+
+/* ============================================
+   Product Grid - Borderless
+   ============================================ */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+  padding: var(--space-xl) var(--space-lg);
+  padding-top: 100px; /* Space below header */
+  padding-left: calc(var(--space-lg) + 100px); /* Space for floating nav */
+}
+
+@media (max-width: 1000px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    padding-left: var(--space-lg); /* Reset for mobile */
+    padding-top: calc(48px + var(--space-lg));
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card__image-wrapper {
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-base);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.02);
+}
+
+/* Info below image - hidden until hover */
+.product-card__info {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all var(--transition-base);
+}
+
+.product-card:hover .product-card__info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card__title {
+  font-family: var(--font-digital);
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-xs) 0;
+  min-height: 1.4em;
+}
+
+/* Glitch text effect */
+.glitch-text {
+  display: inline-block;
+}
+
+.glitch-text .char {
+  display: inline-block;
+  transition: opacity 50ms;
+}
+
+.glitch-text.glitching .char {
+  animation: glitch-flicker 100ms infinite;
+}
+
+@keyframes glitch-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.product-card__price {
+  font-family: var(--font-digital);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Sold out */
+.product-card--sold-out .product-card__image {
+  opacity: 0.35;
+}
+
+.product-card--sold-out .product-card__info {
+  opacity: 0.5;
+}
+
+.product-card--sold-out .product-card__title::after {
+  content: ' [SOLD]';
+  color: var(--color-text-hollow);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  padding: var(--space-xl) var(--space-lg);
+  padding-bottom: calc(var(--space-xl) + 80px); /* Space for mobile nav */
+  text-align: center;
+}
+
+@media (min-width: 701px) {
+  .footer {
+    padding-bottom: var(--space-xl);
+  }
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.footer__link {
+  font-family: var(--font-digital);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.footer__copy {
+  font-family: var(--font-digital);
+  font-size: 10px;
+  color: var(--color-text-hollow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================
+   Floating Glass Elements
+   ============================================ */
+
+/* Back to top - Frosted glass pill */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 900;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  font-family: var(--font-digital);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
+}
+
+@media (max-width: 700px) {
+  .back-to-top {
+    bottom: calc(56px + var(--space-md)); /* Above mobile nav */
+    right: var(--space-md);
+  }
+}
+
+/* Floating info card - Glass container */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Notification toast - Glass */
+.toast {
+  position: fixed;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  z-index: 1100;
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  font-family: var(--font-digital);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  opacity: 0;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .toast {
+    bottom: calc(56px + var(--space-lg)); /* Above mobile nav */
+  }
+}
+
+/* ============================================
+   Mobile Quick-Add Drawer
+   ============================================ */
+
+.quick-add-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.quick-add-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quick-add-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1060;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px 20px 0 0;
+  padding: var(--space-md) var(--space-lg) calc(56px + var(--space-lg));
+  transform: translateY(100%);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.quick-add-drawer.open {
+  transform: translateY(0);
+}
+
+/* Drawer handle */
+.quick-add-drawer::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.quick-add__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.quick-add__image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.quick-add__info {
+  flex: 1;
+}
+
+.quick-add__title {
+  font-family: var(--font-digital);
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.quick-add__price {
+  font-family: var(--font-digital);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.quick-add__close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--color-text-muted);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+}
+
+/* Size selector */
+.quick-add__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.quick-add__size {
+  min-width: 48px;
+  height: 40px;
+  padding: 0 var(--space-md);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-family: var(--font-digital);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.quick-add__size:hover,
+.quick-add__size.selected {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.quick-add__size:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Add to cart button */
+.quick-add__submit {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-digital);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quick-add__submit:hover {
+  opacity: 0.85;
+}
+
+.quick-add__submit:active {
+  transform: scale(0.98);
+}
+
+/* Desktop: hide mobile drawer, use modal instead */
+@media (min-width: 701px) {
+  .quick-add-drawer {
+    display: none;
+  }
+}
+
+/* Newsletter */
+.newsletter {
+  max-width: 280px;
+  margin: 0 auto var(--space-lg);
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-text);
+  background: transparent;
+  font-family: var(--font-digital);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.newsletter__input:focus {
+  outline: none;
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   Product Page
+   ============================================ */
+
+.product-page {
+  padding-top: calc(48px + var(--space-xl));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .product-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-page__gallery {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-page__main-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-page__info {
+  padding-top: var(--space-md);
+}
+
+.product-page__title {
+  font-family: var(--font-digital);
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.product-page__price {
+  font-family: var(--font-digital);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.product-page__description {
+  font-family: var(--font-digital);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.product-page__add-btn {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-digital);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.product-page__add-btn:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   3D Cursor-Tracking Element (Eyes)
+   ============================================ */
+
+.eyes-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.eyes {
+  display: flex;
+  gap: 12px;
+}
+
+.eye {
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: 2px solid var(--color-text);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.eye__pupil {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-text);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 50ms ease-out;
+}
+
+.eye__pupil::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+/* Blink animation */
+@keyframes blink {
+  0%, 96%, 100% { transform: scaleY(1); }
+  98% { transform: scaleY(0.1); }
+}
+
+.eye {
+  animation: blink 4s infinite;
+  animation-delay: var(--blink-delay, 0s);
+}
+
+.eyes-container:hover .eye {
+  animation: none;
+}
+
+/* Hide on mobile */
+@media (max-width: 700px) {
+  .eyes-container {
+    display: none;
+  }
+}
+
+/* ============================================
+   Desktop Quick View Modal
+   ============================================ */
+
+.quick-view-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-view-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quick-view {
+  background: var(--color-bg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quick-view-overlay.open .quick-view {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.quick-view__image-wrap {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  padding: var(--space-lg);
+}
+
+.quick-view__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.quick-view__content {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-view__close {
+  align-self: flex-end;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  transition: color var(--transition-fast);
+}
+
+.quick-view__close:hover {
+  color: var(--color-text);
+}
+
+.quick-view__title {
+  font-family: var(--font-digital);
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.quick-view__price {
+  font-family: var(--font-digital);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.quick-view__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.quick-view__size {
+  min-width: 44px;
+  height: 36px;
+  padding: 0 var(--space-md);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-family: var(--font-digital);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.quick-view__size:hover,
+.quick-view__size.selected {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.quick-view__size:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.quick-view__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.quick-view__add {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  font-family: var(--font-digital);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.quick-view__add:hover {
+  opacity: 0.8;
+}
+
+.quick-view__details {
+  width: 100%;
+  padding: var(--space-sm);
+  background: transparent;
+  border: 1px solid var(--color-text);
+  font-family: var(--font-digital);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.quick-view__details:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  opacity: 1;
+}
+
+/* Hide on mobile */
+@media (max-width: 700px) {
+  .quick-view-overlay {
+    display: none;
+  }
+}
+
+/* ============================================
+   Utility
+   ============================================ */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
